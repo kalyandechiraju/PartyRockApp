@@ -28,6 +28,8 @@ class PartyRockTableViewCell: UITableViewCell {
         videoLabel.text = partyRock.videoTitle
         let url = URL(string: partyRock.imageURL)!
         
+        // Code to push the network task to background thread
+        // And publish changes in the UI Thread
         DispatchQueue.global().async {
             do {
                 let data = try Data(contentsOf: url)
