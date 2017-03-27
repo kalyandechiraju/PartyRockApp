@@ -10,10 +10,22 @@ import UIKit
 
 class VideoViewController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+    
+    private var _partyRockItem: PartyRockModel!
+    
+    var partyRockItem: PartyRockModel {
+        get {
+            return _partyRockItem
+        } set {
+            _partyRockItem = newValue
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        webView.loadHTMLString(_partyRockItem.videoURL, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {

@@ -70,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="225" width="320" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="nVa-vZ-PTv" customClass="PartyRockTableViewCell" customModule="PartyRock" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyRockCell" rowHeight="77" id="nVa-vZ-PTv" customClass="PartyRockTableViewCell" customModule="PartyRock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nVa-vZ-PTv" id="YRU-Rp-tF2">
@@ -125,6 +125,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="p1K-Uw-Eyx" id="IhJ-9z-s5S"/>
                         <segue destination="Hqw-hM-z4L" kind="showDetail" identifier="VideoVC" id="Rom-xF-n2d"/>
                     </connections>
                 </viewController>
@@ -159,6 +160,9 @@
                             <constraint firstAttribute="trailing" secondItem="Zye-ez-BRm" secondAttribute="trailing" id="Xgn-QU-xNz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Zye-ez-BRm" id="dbM-Mc-nfv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlS-FZ-OjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

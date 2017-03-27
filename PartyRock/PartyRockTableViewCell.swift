@@ -26,7 +26,18 @@ class PartyRockTableViewCell: UITableViewCell {
     
     func updateUI(partyRock: PartyRockModel)  {
         videoLabel.text = partyRock.videoTitle
-        // TODO: Set Image URL to imageview
+        let url = URL(string: partyRock.imageURL)!
+        
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.global().sync {
+                    self.videoImage.image = UIImage(data: data)
+                }
+            } catch {
+                // Handle the error
+            }
+        }
     }
 
 }
